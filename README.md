@@ -64,6 +64,44 @@ Run the migrations.
 
 >docker-compose exec app php artisan migrate
 
-To install redis, mailhog and more follow the instructions from the original article, starting from section 4.3.
+###Redis
+
+####Uncomment Redis configuration in docker-compose file.
+
+Add dependency so that Laravel can talk to Redis.
+
+>docker-compose exec app composer require predis/predis
+
+Change following variable values in .env file.
+
+```text
+CACHE_DRIVER=redis
+REDIS_HOST=redis
+```
+
+Add following variable to .env file.
+
+>REDIS_CLIENT=predis
+
+Clear cache
+
+>docker-compose exec app php artisan config:clear
+
+###Mailhog
+
+####Uncomment mailhog configuration in docker-compose file.
+
+Clear cache.
+
+>docker-compose exec app php artisan config:clear
+
+Change following variable value in .env file.
+
+>MAIL_FROM_ADDRESS=your@testEmail.dev
+
+Restart docker containers
+
+>docker-compose down
+> docker-compose up
 
 [Link to the original article by Isaac Souza](https://www.linkedin.com/pulse/how-create-laravel-development-environment-using-docker-isaac-souza/)

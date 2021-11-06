@@ -48,3 +48,31 @@ services:
             - ./nginx/conf:/etc/nginx/conf.d
         networks: 
             - app-network
+###############################################################
+#       Change values of the following variables in .env
+#
+#       CACHE_DRIVER=redis
+#       REDIS_HOST=redis
+#
+#       Add following variable and its value to .env file
+#
+#       REDIS_CLIENT=predis
+###############################################################
+#    redis:
+#        image: redis:6.2.1-buster
+#        container_name: redis
+#        restart: unless-stopped
+#        tty: true
+#        volumes:
+#            - ./redis/data:/data
+#        networks:
+#            - app-network
+###############################################################
+#    mailhog:
+#        image: mailhog/mailhog:v1.0.1
+#        container_name: mailhog
+#        restart: unless-stopped
+#        ports:
+#            - 8025:8025
+#        networks:
+#            - app-network
