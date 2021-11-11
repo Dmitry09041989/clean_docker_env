@@ -52,9 +52,9 @@ The Docker environment must be running while dependencies are installed.
 >docker-compose exec app composer install
 
 Create a copy of .env.example file and generate a new encryption key.
->docker-compose exec -T app cp .env.example .env
+>docker-compose exec app cp .env.example .env
 
->docker-compose exec -T app php artisan key:generate
+>docker-compose exec app php artisan key:generate
 
 Clear configuration cache.
 
