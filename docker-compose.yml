@@ -60,7 +60,7 @@ services:
 #
 #       REDIS_CLIENT=predis
 ###############################################################
-#    redis:
+#     redis:
 #        image: redis:6.2.1-buster
 #        container_name: redis
 #        restart: unless-stopped
@@ -70,7 +70,7 @@ services:
 #        networks:
 #            - app-network
 ###############################################################
-#    mailhog:
+#     mailhog:
 #        image: mailhog/mailhog:v1.0.1
 #        container_name: mailhog
 #        restart: unless-stopped
